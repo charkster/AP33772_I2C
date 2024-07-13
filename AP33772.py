@@ -46,7 +46,10 @@ class AP37772:
     _PDO_PPS_CURRENT_WIDTH  = 7
     _PDO_PPS_CURRENT_OFFSET = 0
     _PDO_PPS_CURRENT_LSB    = 0.05 # 50mA
-    
+
+    # a bit field will have an offset and width, and that can be used to extract the bit field value from a larger concatinated value (such as a dword)
+    # the offset is the number of single bit shifts, the width can be used to create a bit mask to bitwise-AND with the larger concatinated value, 
+    #  to elinimate higher bits which are not part of the bit field. A bit mask is 2 ** width - 1. For example a width of 3 is 2 ** 3 - 1 = 0x07
     def get_pdo(self, num=1):
         pdo_all = self.read_data(address=self._SRCPDO_ADDR, num_bytes=(self._SRCPDO_NUM_PDO * self._SRCPDO_NUM_BYTES))
         pdo_dword = (pdo_all >> ((num-1)*32)) & (2**(self._SRCPDO_NUM_BYTES * 8) - 1) # 32bits in a dword, 32 could have been written as self._SRCPDO_NUM_BYTES * 8
