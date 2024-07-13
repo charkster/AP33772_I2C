@@ -13,4 +13,6 @@ There are [4.7k Ohm I2C pullups](https://download.mikroe.com/documents/add-on-bo
 When I powered the Mikroe board's 3V3 pin using a constant 3.3V rail, I was not able to reset the I2C interface (which is needed from time to time). 
 
 The AP33772 needs power from the USB PD wall adapter cable in order to respond to I2C (the 3V3 is for communication only). 
-The AN pin is a 7.32 : 1 resistor divider of VBUS (VBUS=20V has AN=2.73V). If you are going to read the AN pin with an ADC, the reference should allow for 2.73V measurements.
+The AN pin is a [7.32 : 1 resistor divider](https://download.mikroe.com/documents/add-on-boards/click/usb-c-sink-2-click/usb-c_sink_2_click_v100_Schematic.PDF) of VBUS (VBUS=20V has AN=2.73V). If you are going to read the AN pin with an ADC, the reference should allow for 2.73V measurements.
+
+The LED labeled "FAULT" is powered by GPIO4, which isn't the interrupt pin (GPIO3). It doesn't look like a fault to me, just an indicator that VSINK (VOUT) is valid and being driven through the protection FETs. 
