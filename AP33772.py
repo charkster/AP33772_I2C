@@ -49,7 +49,7 @@ class AP37772:
     
     def get_pdo(self, num=1):
         pdo_all = self.read_data(address=self._SRCPDO_ADDR, num_bytes=(self._SRCPDO_NUM_PDO * self._SRCPDO_NUM_BYTES))
-        pdo_dword = (pdo_all >> ((num-1)*32)) & (2**(self._SRCPDO_NUM_BYTES * 8) - 1)
+        pdo_dword = (pdo_all >> ((num-1)*32)) & (2**(self._SRCPDO_NUM_BYTES * 8) - 1) # 32bits in a dword, 32 could have been written as self._SRCPDO_NUM_BYTES * 8
         pdo_type_raw = int((pdo_dword >> self._PDO_TYPE_OFFSET) & (2**self._PDO_PPS_TYPE_WIDTH-1))
         if (pdo_type_raw == self._PDO_TYPE_FIXED):
             pdo_type = 'FIXED'
