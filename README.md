@@ -2,7 +2,7 @@
 
 ![picture](https://cdn1-shop.mikroe.com/img/product/usb-c-sink-2-click/usb-c-sink-2-click-large_default-1.jpg)
 
-Python driver for [Mikroe USB-C Sink 2 Click](https://www.mikroe.com/usb-c-sink-2-click) board which uses [AP33772](https://www.diodes.com/assets/Evaluation-Boards/AP33772-Sink-Controller-EVB-User-Guide.pdf) to query and control USB PD 3.0 wall adapter. Works on Raspberry Pi and MicroPython.
+Python driver for [Mikroe USB-C Sink 2 Click](https://www.mikroe.com/usb-c-sink-2-click) board which uses [AP33772](https://www.diodes.com/assets/Evaluation-Boards/AP33772-Sink-Controller-EVB-User-Guide.pdf) to query and control USB PD 3.0 wall adapter. Works on Raspberry Pi and MicroPython. For offical C language support check [here](https://github.com/MikroElektronika/mikrosdk_click_v2/tree/master/clicks/usbcsink2)
 
 I am able to query a USB PD wall adapater and request a specific PDO (including PPS!!). The board costs [$15 from Digikey](https://www.digikey.com/en/products/detail/mikroelektronika/MIKROE-5792/21326383).
 
