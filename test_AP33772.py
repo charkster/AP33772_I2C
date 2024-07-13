@@ -1,6 +1,6 @@
 from AP33772 import *
 #import machine
-#i2c    = machine.I2C(1,sda=machine.Pin(6), scl=machine.Pin(7), freq=400000) #xiao rp2040
+#i2c    = machine.I2C(1,sda=machine.Pin(6), scl=machine.Pin(7), freq=100000) #xiao rp2040
 #en_pin = machine.Pin(3, machine.Pin.OUT) # en_pin connects to 3V3 pin on mikroe click board
 import smbus
 i2c = smbus.SMBus(1) # raspberry pi
