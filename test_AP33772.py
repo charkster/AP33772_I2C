@@ -11,7 +11,7 @@ GPIO.setup(4, GPIO.OUT) # USE RPi GPIO 4, next to I2C pins, connect to 3V3 pin o
 #en_pin.value(1)
 GPIO.output(4, GPIO.HIGH)
 
-USB_PD = AP37772(i2c=i2c)
+USB_PD = AP33772(i2c=i2c)
 for pdo_num in range(1,8):
     USB_PD.get_pdo(pdo_num)
 USB_PD.get_pdo_num()
