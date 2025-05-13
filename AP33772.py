@@ -1,5 +1,5 @@
 
-class AP37772:
+class AP33772:
     
     # Constructor
     def __init__(self, i2c):
